@@ -3,8 +3,8 @@ package udemy.course.msscbrewery.web.resource;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.isNull;
-import static org.mockito.Mockito.*;
 import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 import java.util.UUID;
@@ -12,7 +12,6 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.http.ResponseEntity;
 import udemy.course.msscbrewery.service.CustomerService;
@@ -28,7 +27,7 @@ class CustomerControllerTest {
   private CustomerService customerService;
 
   @Test
-  public void testShouldReturnCustomerDto(){
+  public void testShouldReturnCustomerDto() {
     when(customerService.getCustomer(any())).thenReturn(CustomerDto.builder().build());
 
     ResponseEntity<CustomerDto> customerDto = controller.getCustomer(null);
@@ -38,7 +37,7 @@ class CustomerControllerTest {
   }
 
   @Test
-  public void testShouldAddCustomer(){
+  public void testShouldAddCustomer() {
     CustomerDto build = CustomerDto.builder().build();
     controller.addCustomer(build);
 
@@ -46,13 +45,22 @@ class CustomerControllerTest {
   }
 
   @Test
-  public void testShouldUpdateCustomer(){
+  public void testShouldUpdateCustomer() {
     UUID uuid = UUID.randomUUID();
     CustomerDto build = CustomerDto.builder().build();
 
     controller.updateCustomer(uuid, build);
 
     verify(customerService, times(1)).updateCustomer(uuid, build);
+  }
+
+  @Test
+  public void testShouldDeleteCustomer() {
+    UUID uuid = UUID.randomUUID();
+
+    controller.deleteCustomer(uuid);
+
+    verify(customerService, times(1)).deleteCustomer(uuid);
   }
 
 }

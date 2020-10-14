@@ -21,4 +21,9 @@ public class CustomerServiceAdapter implements CustomerService{
   public void updateCustomer(UUID customerId, CustomerDto customerDto) {
 
   }
+
+  @Override
+  public void deleteCustomer(UUID customerId) {
+
+  }
 }
