@@ -9,6 +9,7 @@ import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
+import java.util.UUID;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -39,5 +40,22 @@ class BeerControllerTest {
     assertNull(entity.getBody().getBeerName());
 
     verify(beerService, times(1)).getBeer(isNull());
+  }
+
+  @Test
+  void addBeerShouldCallBeerServiceAddBeerMethod() {
+    BeerDto build = BeerDto.builder().build();
+    controller.addBeer(build);
+
+    verify(beerService, times(1)).addBeer(build);
+  }
+
+  @Test
+  void updateBeerShouldCallBeerServiceUpdateBeer() {
+    UUID uuid = UUID.randomUUID();
+    BeerDto build = BeerDto.builder().build();
+    controller.updateBeer(uuid, build);
+
+    verify(beerService, times(1)).updateBeer(uuid, build);
   }
 }

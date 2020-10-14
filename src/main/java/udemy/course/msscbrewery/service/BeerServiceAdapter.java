@@ -11,4 +11,14 @@ public class BeerServiceAdapter implements BeerService {
   public BeerDto getBeer(UUID beerId) {
     return BeerDto.builder().id(beerId).build();
   }
+
+  @Override
+  public void addBeer(BeerDto beerDto) {
+
+  }
+
+  @Override
+  public void updateBeer(UUID beerId, BeerDto beerDto) {
+
+  }
 }
