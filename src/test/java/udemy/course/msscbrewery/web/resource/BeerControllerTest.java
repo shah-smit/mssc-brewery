@@ -58,4 +58,13 @@ class BeerControllerTest {
 
     verify(beerService, times(1)).updateBeer(uuid, build);
   }
+
+  @Test
+  void testShouldDeleteBeer() {
+    UUID uuid = UUID.randomUUID();
+
+    controller.deleteBeer(uuid);
+
+    verify(beerService, times(1)).deleteBeer(uuid);
+  }
 }

@@ -21,4 +21,9 @@ public class BeerServiceAdapter implements BeerService {
   public void updateBeer(UUID beerId, BeerDto beerDto) {
 
   }
+
+  @Override
+  public void deleteBeer(UUID beerId) {
+
+  }
 }
