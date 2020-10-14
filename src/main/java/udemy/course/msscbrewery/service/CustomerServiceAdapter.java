@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 import udemy.course.msscbrewery.web.model.CustomerDto;
 
 @Service
-public class CustomerServiceAdapter implements CustomerService{
+public class CustomerServiceAdapter implements CustomerService {
 
   @Override
   public CustomerDto getCustomer(UUID id) {

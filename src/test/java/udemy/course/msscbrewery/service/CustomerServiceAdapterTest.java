@@ -17,7 +17,7 @@ public class CustomerServiceAdapterTest {
   CustomerServiceAdapter customerServiceAdapter;
 
   @Test
-  public void testShouldReturnCustomerDtoWithGivenId(){
+  public void testShouldReturnCustomerDtoWithGivenId() {
     UUID uuid = UUID.randomUUID();
     CustomerDto customerDto = customerServiceAdapter.getCustomer(uuid);
 

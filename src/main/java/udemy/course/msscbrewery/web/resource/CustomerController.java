@@ -40,7 +40,7 @@ public class CustomerController {
   }
 
   @DeleteMapping("/{customerId}")
-  public void deleteCustomer(@PathVariable UUID customerId){
+  public void deleteCustomer(@PathVariable UUID customerId) {
     customerService.deleteCustomer(customerId);
   }
 

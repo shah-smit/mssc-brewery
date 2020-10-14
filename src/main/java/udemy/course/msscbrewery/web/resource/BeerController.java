@@ -30,17 +30,17 @@ public class BeerController {
 
   @PostMapping
   @ResponseStatus(HttpStatus.CREATED)
-  public void addBeer(@RequestBody BeerDto beerDto){
+  public void addBeer(@RequestBody BeerDto beerDto) {
     beerService.addBeer(beerDto);
   }
 
   @PutMapping("/{beerId}")
-  public void updateBeer(@PathVariable UUID beerId, @RequestBody BeerDto beerDto){
+  public void updateBeer(@PathVariable UUID beerId, @RequestBody BeerDto beerDto) {
     beerService.updateBeer(beerId, beerDto);
   }
 
   @DeleteMapping("/{beerId}")
-  public void deleteBeer(@PathVariable UUID beerId){
+  public void deleteBeer(@PathVariable UUID beerId) {
     beerService.deleteBeer(beerId);
   }
 }
