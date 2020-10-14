@@ -11,4 +11,14 @@ public class CustomerServiceAdapter implements CustomerService{
   public CustomerDto getCustomer(UUID id) {
     return CustomerDto.builder().id(id).build();
   }
+
+  @Override
+  public void addCustomer(CustomerDto customerDto) {
+
+  }
+
+  @Override
+  public void updateCustomer(UUID customerId, CustomerDto customerDto) {
+
+  }
 }
