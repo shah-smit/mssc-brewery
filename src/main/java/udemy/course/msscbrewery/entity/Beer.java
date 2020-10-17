@@ -1,4 +1,4 @@
-package udemy.course.msscbrewery.web.entity;
+package udemy.course.msscbrewery.entity;
 
 import java.math.BigDecimal;
 import java.sql.Timestamp;
