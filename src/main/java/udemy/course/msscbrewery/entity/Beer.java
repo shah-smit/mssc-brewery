@@ -43,7 +43,7 @@ public class Beer {
   private String beerStyle;
   @Column(unique = true)
   private Long upc;
-  private BigDecimal bigDecimal;
+  private BigDecimal price;
 
   private Integer minOnHand;
   private Integer quantityToBrew;
