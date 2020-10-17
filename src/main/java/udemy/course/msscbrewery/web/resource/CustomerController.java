@@ -27,7 +27,7 @@ public class CustomerController {
 
   @GetMapping("/{customerId}")
   public ResponseEntity<CustomerDto> getCustomer(@PathVariable UUID customerId) {
-    log.info("getCustomer {}", customerId.toString());
+    log.info("getCustomer {}", customerId);
     return ResponseEntity.ok(customerService.getCustomer(customerId));
   }
 
@@ -40,7 +40,7 @@ public class CustomerController {
 
   @PutMapping("/{customerId}")
   public void updateCustomer(@PathVariable UUID customerId, @RequestBody CustomerDto customerDto) {
-    log.info("updateCustomer {}", customerId.toString());
+    log.info("updateCustomer {}", customerId);
     customerService.updateCustomer(customerId, customerDto);
   }
 
