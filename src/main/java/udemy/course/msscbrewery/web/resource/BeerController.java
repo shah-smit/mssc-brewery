@@ -1,16 +1,12 @@
 package udemy.course.msscbrewery.web.resource;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.UUID;
-import javax.validation.ConstraintViolationException;
 import javax.validation.Valid;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -53,19 +49,5 @@ public class BeerController {
   public void deleteBeer(@PathVariable UUID beerId) {
     log.info("deleting beer {}", beerId);
     beerService.deleteBeer(beerId);
-  }
-
-  @ExceptionHandler(ConstraintViolationException.class)
-  public ResponseEntity<List<String>> validationErrorHandler(ConstraintViolationException e) {
-    List<String> errors = new ArrayList<>(e.getConstraintViolations().size());
-    e.getConstraintViolations()
-        .forEach(
-            constraintViolation ->
-                errors.add(
-                    constraintViolation.getPropertyPath()
-                        + ":"
-                        + constraintViolation.getMessage()));
-
-    return new ResponseEntity<>(errors, HttpStatus.BAD_REQUEST);
   }
 }
