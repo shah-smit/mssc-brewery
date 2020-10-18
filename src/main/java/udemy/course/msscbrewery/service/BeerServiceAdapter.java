@@ -13,17 +13,11 @@ public class BeerServiceAdapter implements BeerService {
   }
 
   @Override
-  public void addBeer(BeerDto beerDto) {
-
-  }
+  public void addBeer(BeerDto beerDto) {}
 
   @Override
-  public void updateBeer(UUID beerId, BeerDto beerDto) {
-
-  }
+  public void updateBeer(UUID beerId, BeerDto beerDto) {}
 
   @Override
-  public void deleteBeer(UUID beerId) {
-
-  }
+  public void deleteBeer(UUID beerId) {}
 }

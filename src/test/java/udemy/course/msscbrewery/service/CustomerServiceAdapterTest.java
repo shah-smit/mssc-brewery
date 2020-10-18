@@ -13,8 +13,7 @@ import udemy.course.msscbrewery.web.model.CustomerDto;
 @ExtendWith(MockitoExtension.class)
 public class CustomerServiceAdapterTest {
 
-  @InjectMocks
-  CustomerServiceAdapter customerServiceAdapter;
+  @InjectMocks CustomerServiceAdapter customerServiceAdapter;
 
   @Test
   public void testShouldReturnCustomerDtoWithGivenId() {
@@ -24,5 +23,4 @@ public class CustomerServiceAdapterTest {
     assertNotNull(customerDto);
     assertEquals(uuid, customerDto.getId());
   }
-
 }

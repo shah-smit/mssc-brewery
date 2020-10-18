@@ -44,7 +44,8 @@ public class CustomerController {
   }
 
   @PutMapping("/{customerId}")
-  public void updateCustomer(@PathVariable UUID customerId, @Valid @RequestBody CustomerDto customerDto) {
+  public void updateCustomer(
+      @PathVariable UUID customerId, @Valid @RequestBody CustomerDto customerDto) {
     log.info("updateCustomer {}", customerId);
     customerService.updateCustomer(customerId, customerDto);
   }
@@ -56,11 +57,16 @@ public class CustomerController {
   }
 
   @ExceptionHandler(ConstraintViolationException.class)
-  public ResponseEntity<List<String>> validationErrorHandler(ConstraintViolationException e){
+  public ResponseEntity<List<String>> validationErrorHandler(ConstraintViolationException e) {
     List<String> errors = new ArrayList<>(e.getConstraintViolations().size());
-    e.getConstraintViolations().forEach(constraintViolation -> errors.add(constraintViolation.getPropertyPath() + ":" + constraintViolation.getMessage()));
+    e.getConstraintViolations()
+        .forEach(
+            constraintViolation ->
+                errors.add(
+                    constraintViolation.getPropertyPath()
+                        + ":"
+                        + constraintViolation.getMessage()));
 
     return new ResponseEntity<>(errors, HttpStatus.BAD_REQUEST);
   }
-
 }

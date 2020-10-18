@@ -14,12 +14,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class BeerDto {
-  @Null
-  private UUID id;
-  @NotBlank
-  private String beerName;
-  @NotBlank
-  private String beerStyle;
-  @Positive
-  private Long upc;
+  @Null private UUID id;
+  @NotBlank private String beerName;
+  @NotBlank private String beerStyle;
+  @Positive private Long upc;
 }

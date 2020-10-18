@@ -3,7 +3,6 @@ package udemy.course.msscbrewery.web.resource;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
-import javax.validation.ConstraintDeclarationException;
 import javax.validation.ConstraintViolationException;
 import javax.validation.Valid;
 import lombok.AllArgsConstructor;
@@ -57,9 +56,15 @@ public class BeerController {
   }
 
   @ExceptionHandler(ConstraintViolationException.class)
-  public ResponseEntity<List<String>> validationErrorHandler(ConstraintViolationException e){
+  public ResponseEntity<List<String>> validationErrorHandler(ConstraintViolationException e) {
     List<String> errors = new ArrayList<>(e.getConstraintViolations().size());
-    e.getConstraintViolations().forEach(constraintViolation -> errors.add(constraintViolation.getPropertyPath() + ":" + constraintViolation.getMessage()));
+    e.getConstraintViolations()
+        .forEach(
+            constraintViolation ->
+                errors.add(
+                    constraintViolation.getPropertyPath()
+                        + ":"
+                        + constraintViolation.getMessage()));
 
     return new ResponseEntity<>(errors, HttpStatus.BAD_REQUEST);
   }

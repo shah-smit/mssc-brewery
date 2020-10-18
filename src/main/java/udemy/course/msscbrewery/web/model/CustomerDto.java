@@ -1,8 +1,6 @@
 package udemy.course.msscbrewery.web.model;
 
 import java.util.UUID;
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -16,8 +14,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class CustomerDto {
-  @NotNull
-  private UUID id;
+  @NotNull private UUID id;
+
   @NotBlank
   @Size(min = 3, max = 100)
   private String name;

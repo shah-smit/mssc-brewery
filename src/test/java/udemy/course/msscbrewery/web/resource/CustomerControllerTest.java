@@ -20,11 +20,9 @@ import udemy.course.msscbrewery.web.model.CustomerDto;
 @ExtendWith(MockitoExtension.class)
 class CustomerControllerTest {
 
-  @InjectMocks
-  private CustomerController controller;
+  @InjectMocks private CustomerController controller;
 
-  @Mock
-  private CustomerService customerService;
+  @Mock private CustomerService customerService;
 
   @Test
   public void testShouldReturnCustomerDto() {
@@ -62,5 +60,4 @@ class CustomerControllerTest {
 
     verify(customerService, times(1)).deleteCustomer(uuid);
   }
-
 }

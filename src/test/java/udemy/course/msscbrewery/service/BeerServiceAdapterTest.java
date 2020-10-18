@@ -13,8 +13,7 @@ import udemy.course.msscbrewery.web.model.BeerDto;
 @ExtendWith(MockitoExtension.class)
 class BeerServiceAdapterTest {
 
-  @InjectMocks
-  private BeerServiceAdapter beerServiceAdapter;
+  @InjectMocks private BeerServiceAdapter beerServiceAdapter;
 
   @Test
   void getBeerWithAnyIdShouldReturnEmptyBeerDto() {

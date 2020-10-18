@@ -6,6 +6,4 @@ import org.springframework.stereotype.Repository;
 import udemy.course.msscbrewery.entity.Beer;
 
 @Repository
-public interface BeerRepository extends PagingAndSortingRepository<Beer, UUID> {
-
-}
+public interface BeerRepository extends PagingAndSortingRepository<Beer, UUID> {}

@@ -23,11 +23,9 @@ import udemy.course.msscbrewery.web.model.BeerDto;
 @ExtendWith(MockitoExtension.class)
 class BeerControllerTest {
 
-  @InjectMocks
-  private BeerController controller;
+  @InjectMocks private BeerController controller;
 
-  @Mock
-  private BeerService beerService;
+  @Mock private BeerService beerService;
 
   @Test
   void getBeerShouldReturnEmptyBeerObjectWithNullBeerId() {

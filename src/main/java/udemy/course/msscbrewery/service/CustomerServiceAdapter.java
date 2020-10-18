@@ -13,17 +13,11 @@ public class CustomerServiceAdapter implements CustomerService {
   }
 
   @Override
-  public void addCustomer(CustomerDto customerDto) {
-
-  }
+  public void addCustomer(CustomerDto customerDto) {}
 
   @Override
-  public void updateCustomer(UUID customerId, CustomerDto customerDto) {
-
-  }
+  public void updateCustomer(UUID customerId, CustomerDto customerDto) {}
 
   @Override
-  public void deleteCustomer(UUID customerId) {
-
-  }
+  public void deleteCustomer(UUID customerId) {}
 }
